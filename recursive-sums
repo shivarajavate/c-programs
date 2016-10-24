@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+  int i=0, n;
+  long long int a, b, val=0, sum=0;
+  scanf("%d", &n);
+  
+  for(i=0; i<n; ++i) {
+    scanf("%d", &a);
+    scanf("%d", &b);
+    val=a*b;
+    sum=sum+(val%9);
+  }
+  
+  printf("%d", sum);
+  return 0;
+}
