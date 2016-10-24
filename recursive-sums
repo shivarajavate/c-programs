@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     scanf("%d", &a);
     scanf("%d", &b);
     val=a*b;
-    sum=sum+(val%9);
+    sum=(sum+(val%9)%9);
   }
   
   printf("%d", sum);
