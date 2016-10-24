@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+int main(int argc, char *argv[]) {
+  int i=0, n, dCount=MAX_SIZE/2, sCount=MAX_SIZE, totalCount=0;
+  
+  char doubleChars[4]={'h', 'a', 'e', 'r'};
+  int doubleCounts[4]={0, 0, 0, 0};
+  char singleChars[3]={'c', 'k', 't'};
+  int singleCounts[3]={0, 0, 0};
+  
+  char C[MAX_SIZE];
+  
+  scanf("%d", &n);
+  for(i=0; i<n; ++i) {
+    scanf("%c", &C[i]);
+    switch(C[i]) {
+      case 'h': doubleCounts[0]+=1;
+                break;
+      case 'a': doubleCounts[1]+=1;
+                break;
+      case 'e': doubleCounts[2]+=1;
+                break;
+      case 'r': doubleCounts[3]+=1;
+                break;
+      case 'c': singleCounts[0]+=1;
+                break;
+      case 'k': singleCounts[1]+=1;
+                break;
+      case 't': singleCounts[2]+=1;
+                break;
+      default : break;
+    }
+  }
+  
+  for(i=0; i<4; ++i) {
+    if(dCount>doubleCounts[i]) {
+      dCount=doubleCounts[i];
+    }
+  }
+  
+  for(i=0; i<3; ++i) {
+    if(sCount>singleCounts[i]) {
+      sCount=singleCounts[i];
+    }
+  }
+  
+  totalCount=(dCount/2)<sCount?(dCount/2):sCount;
+  printf("%d", totalCount);
+  return 0;
+}
